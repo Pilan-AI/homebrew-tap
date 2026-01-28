@@ -8,10 +8,19 @@ class HermesLang < Formula
   depends_on "python@3.12"
 
   def install
-    system "python3.12", "-m", "pip", "install", "--prefix=#{prefix}", "--no-deps", "."
+    # Install the hermes package into libexec
+    libexec.install Dir["hermes"]
+    libexec.install "pyproject.toml"
+    libexec.install Dir["examples"]
+
+    # Create wrapper script
+    (bin/"hermes").write <<~SH
+      #!/bin/bash
+      PYTHONPATH="#{libexec}" exec "#{Formula["python@3.12"].opt_bin}/python3.12" -m hermes "$@"
+    SH
   end
 
   test do
-    assert_match "hermes", shell_output("#{bin}/hermes --version 2>&1", 0)
+    assert_match "hermes", shell_output("#{bin}/hermes --help 2>&1")
   end
 end
