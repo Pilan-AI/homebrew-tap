@@ -5,21 +5,21 @@
 class Mnemo < Formula
   desc "Memory for AI-assisted development. Search your AI coding sessions."
   homepage "https://github.com/Pilan-AI/mnemo"
-  version "1.3.7"
+  version "1.3.8"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/Pilan-AI/mnemo/releases/download/v1.3.7/mnemo_1.3.7_darwin_amd64.tar.gz"
-      sha256 "88acd3796ac427663d2a05f6e6525e3cf8342d72f0f5e6aea38c9a5628c790ee"
+      url "https://github.com/Pilan-AI/mnemo/releases/download/v1.3.8/mnemo_1.3.8_darwin_amd64.tar.gz"
+      sha256 "204c40ca9ef3006fb6e2c490813410ba7e5c20c50ccbe6dc54cd95a3570e1532"
 
       def install
         bin.install "mnemo"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/Pilan-AI/mnemo/releases/download/v1.3.7/mnemo_1.3.7_darwin_arm64.tar.gz"
-      sha256 "cd2878cb991f39eee3657567a21686864bb79ea9faebe8b21972bbccc2a684d8"
+      url "https://github.com/Pilan-AI/mnemo/releases/download/v1.3.8/mnemo_1.3.8_darwin_arm64.tar.gz"
+      sha256 "981384c43d371510018c33b7dfaa9873a8b08cec1ec081d58d7ef356376a5ab3"
 
       def install
         bin.install "mnemo"
@@ -29,15 +29,15 @@ class Mnemo < Formula
 
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/Pilan-AI/mnemo/releases/download/v1.3.7/mnemo_1.3.7_linux_amd64.tar.gz"
-      sha256 "15c924d0928add4098c6e4c30f2405ded95548e2dc8cc0f2a9906e84fd3be6ed"
+      url "https://github.com/Pilan-AI/mnemo/releases/download/v1.3.8/mnemo_1.3.8_linux_amd64.tar.gz"
+      sha256 "53065376d5788149f53e5d99ab9535ce98343b4cb1c8a42679e3d41c45bff5d0"
       def install
         bin.install "mnemo"
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/Pilan-AI/mnemo/releases/download/v1.3.7/mnemo_1.3.7_linux_arm64.tar.gz"
-      sha256 "517cf5d3cc71ff9e98058accef45ac2cc522006f9c1bb6e6b3edace4aebe5e8b"
+      url "https://github.com/Pilan-AI/mnemo/releases/download/v1.3.8/mnemo_1.3.8_linux_arm64.tar.gz"
+      sha256 "7dab23ec470372f1c9b361649c3e1eb122255dd688285637312aeceb010013c6"
       def install
         bin.install "mnemo"
       end
